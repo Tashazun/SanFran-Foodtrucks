@@ -14,8 +14,8 @@ L.Icon.Default.mergeOptions({
 class MyMap extends Component {
 
   state = {
-    lat: 51.505,
-    lng: -0.09,
+    lat: 37.7749,
+    lng: -122.4194,
     zoom: 13,
   }
 
