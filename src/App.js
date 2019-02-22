@@ -15,14 +15,23 @@ class App extends Component {
                 throw Error(response.statusText);
             }
             const json = await response.json();
-            console.log(json);
-            this.setState({ data: json });
+            const newData = await json.map(field => ({
+                applicant: field.applicant,
+                coords: field.location_2.coordinates,
+                endtime: field.endtime,
+                location: field.location,
+                optionaltext: field.optionaltext,
+                starttime: field.starttime,
+            }));
+            this.setState({ data: newData });
         } catch (err) {
             console.log(err);
         }
     };
 
     render() {
+
+
         return (
             <div id='App-container'>
                 <header id='App-header'>
@@ -30,7 +39,7 @@ class App extends Component {
                     <h4>Truck tracker for the San Franciscan foodie.</h4>
                 </header>
                 <section id='App-map-frame'>
-                    <MyMap />
+                    <MyMap data={this.state.data}/>
                 </section>
                 <footer id='App-footer'>
                     footer
