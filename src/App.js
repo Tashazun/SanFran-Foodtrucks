@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import MyMap from './MyMap';
 
-import './App.css';
+import './App.scss';
 class App extends Component {
 
     state = {
@@ -30,19 +30,21 @@ class App extends Component {
     };
 
     render() {
-
+        const { data } = this.state;
 
         return (
             <div id='App-container'>
                 <header id='App-header'>
-                    <h2>Mobile Eats</h2>
+                    <div id='App-hero'>
+                        <h2>Mobile Eats</h2>
+                    </div>
                     <h4>Truck tracker for the San Franciscan foodie.</h4>
                 </header>
                 <section id='App-map-frame'>
-                    <MyMap data={this.state.data}/>
+                    <MyMap data={data}/>
                 </section>
                 <footer id='App-footer'>
-                    footer
+                    Photo by Tobias Zils on Unsplash
                 </footer>
             </div>
         );

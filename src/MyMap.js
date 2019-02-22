@@ -41,7 +41,7 @@ class MyMap extends Component {
         center={position} 
         maxBounds={bounds} 
         zoom={this.state.zoom} 
-        style={{height: '300px', width: '75%'}}
+        style={{height: '30em', width: '75%'}}
         onMoveend={this.handleMapChange}
         onZoomend={this.handleMapChange}
       >
