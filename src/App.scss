@@ -9,11 +9,7 @@
         flex-direction: column;
         align-items: center;
         background: #181e2c;
-
-        h4 {
-            color: white;
-            font-family: 'Nunito', sans-serif;
-        }
+        box-shadow: 0 10px 20px #292929;
 
         #App-hero {
             width: 100%;
@@ -30,6 +26,37 @@
                 font-family: 'Neuton', serif;
             }
         }
+
+        #App-animations {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+
+            img {
+                height: 15em;
+                width: 13em;
+            }
+
+            h3 {
+                color: #369381;
+                font-family: 'Sansita', sans-serif;
+                font-size: 1.5em;
+            }
+
+            #App-summary {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                hr {
+                    width: 75%;
+                }
+
+                h4 {
+                    color: white;
+                }
+            }
+        }
     }
 
     #App-map-frame {
@@ -37,11 +64,36 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background: #DAF7A6;
+        background: white;
     }
 
     #App-footer {
         height: 25vh;
-        background: #083D32;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        background: #181e2c;
+        clip-path: polygon(0 100%, 1600px 100%, 1600px 0, 0 20%);
+
+        #App-credits {
+            margin: 2%;
+            color: #369381;
+
+            p {
+                margin: 0;
+            }
+        }
+
+        #App-links {
+            width: 8em;
+            margin: 2%;
+            display: flex;
+            justify-content: space-evenly;
+            font-size: 1.5em;
+
+            a {
+                color: #369381;
+            }
+        }
     }
 }
