@@ -4,6 +4,8 @@ import MyMap from './MyMap';
 import './App.scss';
 import spoon from './assets/spoon.svg';
 import fork from './assets/fork.svg';
+import { FaGithubSquare, FaLinkedinIn, FaTwitter, FaReact } from 'react-icons/fa';
+
 class App extends Component {
 
     state = {
@@ -54,7 +56,21 @@ class App extends Component {
                     <MyMap data={data}/>
                 </section>
                 <footer id='App-footer'>
-                    Photo by Tobias Zils on Unsplash
+                    <div id='App-credits'>
+                        <p>Photo by <a href='https://unsplash.com/search/photos/tobias-zils'>Tobias Zils</a> on <a href='https://unsplash.com/'>Unsplash</a></p>
+                        <p>Candy coded with <FaReact /> and a few other things.</p>
+                    </div>
+                    <div id='App-links'>
+                        <a href='https://github.com/Tashazun'>
+                            <FaGithubSquare />
+                        </a>
+                        <a href='https://www.linkedin.com/in/tashazuniga/'>
+                            <FaLinkedinIn />
+                        </a>
+                        <a href='https://twitter.com/artofobscura'>
+                            <FaTwitter />
+                        </a>
+                    </div>
                 </footer>
             </div>
         );

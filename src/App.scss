@@ -69,7 +69,31 @@
 
     #App-footer {
         height: 25vh;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
         background: #181e2c;
         clip-path: polygon(0 100%, 1600px 100%, 1600px 0, 0 20%);
+
+        #App-credits {
+            margin: 2%;
+            color: #369381;
+
+            p {
+                margin: 0;
+            }
+        }
+
+        #App-links {
+            width: 8em;
+            margin: 2%;
+            display: flex;
+            justify-content: space-evenly;
+            font-size: 1.5em;
+
+            a {
+                color: #369381;
+            }
+        }
     }
 }
