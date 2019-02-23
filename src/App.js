@@ -15,10 +15,11 @@ class App extends Component {
                 throw Error(response.statusText);
             }
             const json = await response.json();
-            const newData = await json.map(field => ({
+            const newData = await json.map((field, index) => ({
                 applicant: field.applicant,
                 coords: field.location_2.coordinates,
                 endtime: field.endtime,
+                id: index,
                 location: field.location,
                 optionaltext: field.optionaltext,
                 starttime: field.starttime,
