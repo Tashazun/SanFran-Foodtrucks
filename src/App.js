@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import MyMap from './MyMap';
 
 import './App.scss';
+import spoon from './assets/spoon.svg';
+import fork from './assets/fork.svg';
 class App extends Component {
 
     state = {
@@ -38,7 +40,15 @@ class App extends Component {
                     <div id='App-hero'>
                         <h2>Mobile Eats</h2>
                     </div>
-                    <h4>Truck tracker for the San Franciscan foodie.</h4>
+                    <div id='App-animations'>
+                        <img src={fork} alt='animated fork' />
+                        <div id='App-summary'>
+                            <h3>Truck tracker for the San Franciscan foodie.</h3>
+                            <hr />
+                            <h4>Simply drag or zoom the map to find your next, perfect meal.</h4>
+                        </div>
+                        <img src={spoon} alt='animated spoon' />
+                    </div>
                 </header>
                 <section id='App-map-frame'>
                     <MyMap data={data}/>
