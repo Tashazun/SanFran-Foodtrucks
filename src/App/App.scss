@@ -17,7 +17,7 @@
             width: 100%;
             text-align: center;
             text-shadow: 0px 0px 1px rgba(0,0,0,0.5);
-            background: linear-gradient(#083D3290, #083D3290 ), url('./assets/tobias-zils.jpg') no-repeat center center;
+            background: linear-gradient(#083D3290, #083D3290 ), url('../assets/tobias-zils.jpg') no-repeat center center;
             background-size: cover;
             clip-path: polygon(0 0, 1600px 0, 1600px 87%, 0 100%);
 
@@ -41,13 +41,17 @@
             img {
                 height: 15em;
                 width: 13em;
-                animation: entry 1s ease-in;
+                animation: entry 1s cubic-bezier(.17, .67, .48, 1.05);
             }
 
             @keyframes entry {
                 0% {
                     opacity: 0;
-                    transform: translateY(-.5em);
+                    transform: translateY(-1em);
+                }
+
+                50% {
+                    transform: translateY(.2em);
                 }
 
                 100% {

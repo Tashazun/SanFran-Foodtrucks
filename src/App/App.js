@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import MyMap from './MyMap';
+import MyMap from '../Map/MyMap';
 
 import './App.scss';
-import spoon from './assets/spoon.svg';
-import fork from './assets/fork.svg';
+import spoon from '../assets/spoon.svg';
+import fork from '../assets/fork.svg';
 import { FaGithubSquare, FaLinkedinIn, FaTwitter, FaReact } from 'react-icons/fa';
 
 class App extends Component {
