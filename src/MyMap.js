@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
@@ -13,6 +13,18 @@ L.Icon.Default.mergeOptions({
     shadowUrl: require('leaflet/dist/images/marker-shadow.png')
 });
 
+const PopupMarker = content => (
+  <Marker position={content.coords}>
+    <Popup>{content.applicant}</Popup>
+  </Marker>
+);
+
+const MarkerList = ({ markers }) => {
+  const items = markers.map(({ ...props}, index) => (
+    <PopupMarker key={index} {...props} />
+  ));
+  return <Fragment>{items}</Fragment>
+};
 class MyMap extends Component {
 
   static propTypes = {
@@ -30,12 +42,15 @@ class MyMap extends Component {
   }
 
   render() {
+    const { data } = this.props;
     const position = [this.state.lat, this.state.lng];
 
     const southWest = L.latLng(37.713159, -122.527084);
     const northEast = L.latLng(37.814666, -122.365723);
     const bounds = L.latLngBounds(southWest, northEast);
-
+    if (!data){
+      return null;
+    }
     return (
       <Map 
         center={position} 
@@ -49,11 +64,7 @@ class MyMap extends Component {
           attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <Marker position={position}>
-          <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable.
-          </Popup>
-        </Marker>
+          <MarkerList markers={data} />
       </Map>
     )
   }

@@ -19,11 +19,10 @@ class App extends Component {
                 throw Error(response.statusText);
             }
             const json = await response.json();
-            const newData = await json.map((field, index) => ({
+            const newData = await json.map(field => ({
                 applicant: field.applicant,
-                coords: field.location_2.coordinates,
+                coords: [field.location_2.coordinates[1], field.location_2.coordinates[0]],
                 endtime: field.endtime,
-                id: index,
                 location: field.location,
                 optionaltext: field.optionaltext,
                 starttime: field.starttime,
@@ -54,7 +53,7 @@ class App extends Component {
                     </div>
                 </header>
                 <section id='App-map-frame'>
-                    <MyMap data={data}/>
+                    {data !== null && <MyMap data={data}/>}
                 </section>
                 <footer id='App-footer'>
                     <div id='App-credits'>
