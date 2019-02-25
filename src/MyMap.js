@@ -1,7 +1,9 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 
+
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
+import MarkerClusterGroup from './MapMarkerCluster';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 
@@ -12,6 +14,7 @@ L.Icon.Default.mergeOptions({
     iconUrl: require('leaflet/dist/images/marker-icon.png'),
     shadowUrl: require('leaflet/dist/images/marker-shadow.png')
 });
+
 
 const PopupMarker = content => (
   <Marker position={content.coords}>
@@ -32,13 +35,10 @@ class MyMap extends Component {
   }
 
   state = {
+    updateData: null,
     lat: 37.7749,
     lng: -122.4194,
     zoom: 13,
-  }
-
-  handleMapChange = () => {
-    console.log('I work');
   }
 
   render() {
@@ -53,18 +53,20 @@ class MyMap extends Component {
     }
     return (
       <Map 
-        center={position} 
+        center={position}
+        ref='map' 
         maxBounds={bounds} 
+        maxZoom='20'
         zoom={this.state.zoom} 
         style={{height: '30em', width: '75%'}}
-        onMoveend={this.handleMapChange}
-        onZoomend={this.handleMapChange}
       >
         <TileLayer
           attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-          <MarkerList markers={data} />
+          <MarkerClusterGroup>
+            <MarkerList markers={data} />
+          </MarkerClusterGroup>
       </Map>
     )
   }
