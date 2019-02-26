@@ -8,6 +8,12 @@ describe("App", () => {
     cleanup();
   });
 
+  it("renders App correctly", () => {
+    const { container } = render(<App />);
+
+    expect(container).toMatchSnapshot();
+  });
+
   it("calls fetch with successful status", () => {
     const mockSuccessResponse = {};
     const mockJsonPromise = Promise.resolve(mockSuccessResponse);

@@ -42,22 +42,43 @@
           height: 15em;
           width: 13em;
         }
-        animation: entry 1s cubic-bezier(0.17, 0.67, 0.48, 1.05);
       }
 
-      @keyframes entry {
+      #animated-fork {
+        animation: fadein 1s ease-in, entryL 0.4s ease-out;
+      }
+
+      #animated-spoon {
+        animation: fadein 1s ease-in, entryR 0.8s ease-in-out;
+      }
+
+      @keyframes fadein {
         0% {
           opacity: 0;
-          transform: translateY(-1em);
-        }
-
-        50% {
-          transform: translateY(0.2em);
         }
 
         100% {
           opacity: 100%;
-          transform: translateY(0);
+        }
+      }
+
+      @keyframes entryL {
+        0% {
+          transform: translateX(-10em);
+        }
+
+        100% {
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes entryR {
+        0% {
+          transform: translateX(10em);
+        }
+
+        100% {
+          transform: translateX(0);
         }
       }
 

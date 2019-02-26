@@ -8,7 +8,8 @@ import {
   FaGithubSquare,
   FaLinkedinIn,
   FaTwitter,
-  FaReact
+  FaReact,
+  FaShippingFast
 } from "react-icons/fa";
 
 class App extends Component {
@@ -49,10 +50,12 @@ class App extends Component {
       <div id="App-container">
         <header id="App-header">
           <div id="App-hero">
-            <h2>Mobile Eats</h2>
+            <h2>
+              Mobile <FaShippingFast /> Eats
+            </h2>
           </div>
           <div id="App-animations">
-            <img src={fork} alt="animated fork" />
+            <img id="animated-fork" src={fork} alt="animated fork" />
             <div id="App-summary">
               <h3>Truck tracker for the San Franciscan foodie.</h3>
               <hr />
@@ -60,7 +63,7 @@ class App extends Component {
                 Simply drag or zoom the map to find your next, perfect meal.
               </h4>
             </div>
-            <img src={spoon} alt="animated spoon" />
+            <img id="animated-spoon" src={spoon} alt="animated spoon" />
           </div>
         </header>
         <section id="App-map-frame">
