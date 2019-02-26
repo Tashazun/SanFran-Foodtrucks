@@ -1,0 +1,180 @@
+body {
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+#App-container {
+  position: absolute;
+  overflow: hidden;
+  height: 200vh;
+  width: 100vw;
+}
+#App-container,
+#App-container #App-header {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+#App-container #App-header {
+  height: 75vh;
+  width: 100%;
+  -webkit-align-items: center;
+  align-items: center;
+  background: #181e2c;
+}
+#App-container #App-header #App-hero {
+  height: 50%;
+  width: 100%;
+  text-align: center;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+  background: -webkit-linear-gradient(
+      rgba(8, 61, 50, 0.56),
+      rgba(8, 61, 50, 0.56)
+    ),
+    url(/static/media/tobias-zils.ae70190e.jpg) no-repeat 50%;
+  background: linear-gradient(rgba(8, 61, 50, 0.56), rgba(8, 61, 50, 0.56)),
+    url(/static/media/tobias-zils.ae70190e.jpg) no-repeat 50%;
+  background-size: cover;
+  -webkit-clip-path: polygon(0 0, 1600px 0, 1600px 87%, 0 100%);
+  clip-path: polygon(0 0, 1600px 0, 1600px 87%, 0 100%);
+}
+#App-container #App-header #App-hero h2 {
+  color: #fff;
+  font-family: Neuton, serif;
+  font-size: 2em;
+}
+#App-container #App-header #App-animations {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+}
+#App-container #App-header #App-animations img {
+  -webkit-animation: entry 1s cubic-bezier(0.17, 0.67, 0.48, 1.05);
+  animation: entry 1s cubic-bezier(0.17, 0.67, 0.48, 1.05);
+}
+@media (min-width: 37.5em) {
+  #App-container #App-header #App-animations img {
+    height: 15em;
+    width: 13em;
+  }
+}
+@-webkit-keyframes entry {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-1em);
+    transform: translateY(-1em);
+  }
+  50% {
+    -webkit-transform: translateY(0.2em);
+    transform: translateY(0.2em);
+  }
+  to {
+    opacity: 1%;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes entry {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-1em);
+    transform: translateY(-1em);
+  }
+  50% {
+    -webkit-transform: translateY(0.2em);
+    transform: translateY(0.2em);
+  }
+  to {
+    opacity: 1%;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+#App-container #App-header #App-animations #App-summary {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  align-items: center;
+}
+#App-container #App-header #App-animations #App-summary hr {
+  width: 75%;
+}
+@media (max-width: 37.5em) {
+  #App-container #App-header #App-animations #App-summary hr {
+    width: 100%;
+  }
+}
+#App-container #App-header #App-animations #App-summary h3 {
+  color: #369381;
+  font-family: Sansita, sans-serif;
+  font-size: 1.5em;
+}
+@media (max-width: 37.5em) {
+  #App-container #App-header #App-animations #App-summary h3 {
+    font-size: 1em;
+    margin: 0.2em;
+    text-align: center;
+  }
+}
+#App-container #App-header #App-animations #App-summary h4 {
+  color: #fff;
+}
+@media (max-width: 37.5em) {
+  #App-container #App-header #App-animations #App-summary h4 {
+    font-size: 0.8em;
+    margin: 0;
+    text-align: center;
+  }
+}
+#App-container #App-map-frame {
+  height: 100vh;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  background: #fff;
+}
+#App-container #App-footer {
+  height: 25vh;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: flex-end;
+  align-items: flex-end;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  background: #181e2c;
+  -webkit-clip-path: polygon(0 100%, 1600px 100%, 1600px 0, 0 20%);
+  clip-path: polygon(0 100%, 1600px 100%, 1600px 0, 0 20%);
+}
+#App-container #App-footer #App-credits {
+  margin: 2%;
+  color: #369381;
+}
+#App-container #App-footer #App-credits p {
+  margin: 0;
+  font-size: 1.17em;
+}
+#App-container #App-footer #App-links {
+  width: 8em;
+  margin: 2%;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-evenly;
+  justify-content: space-evenly;
+  font-size: 1.5em;
+}
+@media (max-width: 37.5em) {
+  #App-container #App-footer #App-links {
+    font-size: 1em;
+  }
+}
+#App-container #App-footer #App-links a {
+  color: #369381;
+}
+/*# sourceMappingURL=main.1679153b.chunk.css.map */
