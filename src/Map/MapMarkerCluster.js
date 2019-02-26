@@ -1,10 +1,9 @@
-import { MapLayer, withLeaflet } from 'react-leaflet'
+import { MapLayer, withLeaflet } from "react-leaflet";
 import L from "leaflet";
 
 require("leaflet.markercluster");
 
 class MarkerClusterGroup extends MapLayer {
-
   createLeafletElement(props) {
     const el = new L.markerClusterGroup(props);
     this.contextValue = {
@@ -13,7 +12,6 @@ class MarkerClusterGroup extends MapLayer {
     };
     return el;
   }
-
 }
 
 export default withLeaflet(MarkerClusterGroup);
