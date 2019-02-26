@@ -8,6 +8,8 @@ This app is hosted on Heroku here [Mobile Eats](https://mobile-eats.herokuapp.co
 
 ## Running the tests
 
+This project uses jest and react-testing-library to use comparative snapshots.
+
 ```npm test```
 
 ## Built With
