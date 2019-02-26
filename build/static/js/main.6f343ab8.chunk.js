@@ -22,8 +22,8 @@
         l = (a(33), a(18)),
         i = a.n(l),
         s = a(21),
-        u = a(7),
-        m = a(8),
+        m = a(7),
+        u = a(8),
         p = a(10),
         h = a(9),
         d = a(11),
@@ -57,8 +57,8 @@
           });
           return r.a.createElement(n.Fragment, null, t);
         },
-        j = a(26),
-        k = a(17),
+        k = a(26),
+        j = a(17),
         O = a(6),
         x = a(2),
         A = a.n(x);
@@ -66,19 +66,19 @@
       var z = (function(e) {
           function t() {
             return (
-              Object(u.a)(this, t),
+              Object(m.a)(this, t),
               Object(p.a)(this, Object(h.a)(t).apply(this, arguments))
             );
           }
           return (
             Object(d.a)(t, e),
-            Object(m.a)(t, [
+            Object(u.a)(t, [
               {
                 key: "createLeafletElement",
                 value: function(e) {
                   var t = new A.a.markerClusterGroup(e);
                   return (
-                    (this.contextValue = Object(j.a)({}, e.leaflet, {
+                    (this.contextValue = Object(k.a)({}, e.leaflet, {
                       layerContainer: t
                     })),
                     t
@@ -88,7 +88,7 @@
             ]),
             t
           );
-        })(k.a),
+        })(j.a),
         C = Object(O.b)(z);
       a(39);
       delete A.a.Icon.Default.prototype._getIconUrl,
@@ -100,7 +100,7 @@
       var U = (function(e) {
           function t() {
             var e, a;
-            Object(u.a)(this, t);
+            Object(m.a)(this, t);
             for (var n = arguments.length, r = new Array(n), o = 0; o < n; o++)
               r[o] = arguments[o];
             return (
@@ -113,7 +113,7 @@
           }
           return (
             Object(d.a)(t, e),
-            Object(m.a)(t, [
+            Object(u.a)(t, [
               {
                 key: "render",
                 value: function() {
@@ -157,7 +157,7 @@
         D = (function(e) {
           function t() {
             var e, a;
-            Object(u.a)(this, t);
+            Object(m.a)(this, t);
             for (var n = arguments.length, r = new Array(n), o = 0; o < n; o++)
               r[o] = arguments[o];
             return (
@@ -170,7 +170,7 @@
           }
           return (
             Object(d.a)(t, e),
-            Object(m.a)(t, [
+            Object(u.a)(t, [
               {
                 key: "componentDidMount",
                 value: (function() {
@@ -253,12 +253,19 @@
                       r.a.createElement(
                         "div",
                         { id: "App-hero" },
-                        r.a.createElement("h2", null, "Mobile Eats")
+                        r.a.createElement(
+                          "h2",
+                          null,
+                          "Mobile ",
+                          r.a.createElement(T.d, null),
+                          " Eats"
+                        )
                       ),
                       r.a.createElement(
                         "div",
                         { id: "App-animations" },
                         r.a.createElement("img", {
+                          id: "animated-fork",
                           src: S.a,
                           alt: "animated fork"
                         }),
@@ -278,6 +285,7 @@
                           )
                         ),
                         r.a.createElement("img", {
+                          id: "animated-spoon",
                           src: I.a,
                           alt: "animated spoon"
                         })
@@ -339,7 +347,7 @@
                         r.a.createElement(
                           "a",
                           { href: "https://twitter.com/artofobscura" },
-                          r.a.createElement(T.d, null)
+                          r.a.createElement(T.e, null)
                         )
                       )
                     )
@@ -366,4 +374,4 @@
   },
   [[27, 1, 2]]
 ]);
-//# sourceMappingURL=main.b2106875.chunk.js.map
+//# sourceMappingURL=main.6f343ab8.chunk.js.map

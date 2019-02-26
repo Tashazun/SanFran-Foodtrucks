@@ -50,46 +50,74 @@ body {
   -webkit-justify-content: space-around;
   justify-content: space-around;
 }
-#App-container #App-header #App-animations img {
-  -webkit-animation: entry 1s cubic-bezier(0.17, 0.67, 0.48, 1.05);
-  animation: entry 1s cubic-bezier(0.17, 0.67, 0.48, 1.05);
-}
 @media (min-width: 37.5em) {
   #App-container #App-header #App-animations img {
     height: 15em;
     width: 13em;
   }
 }
-@-webkit-keyframes entry {
+#App-container #App-header #App-animations #animated-fork {
+  -webkit-animation: fadein 1s ease-in, entryL 0.4s ease-out;
+  animation: fadein 1s ease-in, entryL 0.4s ease-out;
+}
+#App-container #App-header #App-animations #animated-spoon {
+  -webkit-animation: fadein 1s ease-in, entryR 0.8s ease-in-out;
+  animation: fadein 1s ease-in, entryR 0.8s ease-in-out;
+}
+@-webkit-keyframes fadein {
   0% {
     opacity: 0;
-    -webkit-transform: translateY(-1em);
-    transform: translateY(-1em);
-  }
-  50% {
-    -webkit-transform: translateY(0.2em);
-    transform: translateY(0.2em);
   }
   to {
     opacity: 1%;
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
   }
 }
-@keyframes entry {
+@keyframes fadein {
   0% {
     opacity: 0;
-    -webkit-transform: translateY(-1em);
-    transform: translateY(-1em);
-  }
-  50% {
-    -webkit-transform: translateY(0.2em);
-    transform: translateY(0.2em);
   }
   to {
     opacity: 1%;
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
+  }
+}
+@-webkit-keyframes entryL {
+  0% {
+    -webkit-transform: translateX(-10em);
+    transform: translateX(-10em);
+  }
+  to {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@keyframes entryL {
+  0% {
+    -webkit-transform: translateX(-10em);
+    transform: translateX(-10em);
+  }
+  to {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@-webkit-keyframes entryR {
+  0% {
+    -webkit-transform: translateX(10em);
+    transform: translateX(10em);
+  }
+  to {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@keyframes entryR {
+  0% {
+    -webkit-transform: translateX(10em);
+    transform: translateX(10em);
+  }
+  to {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
   }
 }
 #App-container #App-header #App-animations #App-summary {
@@ -177,4 +205,4 @@ body {
 #App-container #App-footer #App-links a {
   color: #369381;
 }
-/*# sourceMappingURL=main.1679153b.chunk.css.map */
+/*# sourceMappingURL=main.0a54a76d.chunk.css.map */
