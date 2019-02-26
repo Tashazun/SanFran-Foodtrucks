@@ -1,9 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-testing-library';
+import 'jest-dom/extend-expect';
 import App from './App';
-import { shallow } from 'enzyme';
-
-
 
 describe('App', () => {
   it('calls fetch with successful status', () => {
@@ -13,17 +11,9 @@ describe('App', () => {
       json: () => mockJsonPromise,
     });
     jest.spyOn(global, 'fetch').mockImplementation(() => mockFetchPromise);
-    const wrapper = shallow(<App />);
+    const { container } = render(<App />);
 
     expect(global.fetch).toHaveBeenCalledTimes(1);
     expect(global.fetch).toHaveBeenCalledWith('https://data.sfgov.org/resource/bbb8-hzi6.json');
-  })
-  
-  it('resets the state with the fetched data', () => {
-
-  })
-
-  it('sets an error when the fetch fails', () => {
-
   })
 })

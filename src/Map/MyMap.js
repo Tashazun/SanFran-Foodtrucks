@@ -1,9 +1,10 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Map, TileLayer } from 'react-leaflet';
 
-
-import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
+import MarkerList from './MarkerList';
 import MarkerClusterGroup from './MapMarkerCluster';
+
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 
@@ -15,19 +16,6 @@ L.Icon.Default.mergeOptions({
     shadowUrl: require('leaflet/dist/images/marker-shadow.png')
 });
 
-
-const PopupMarker = content => (
-  <Marker position={content.coords}>
-    <Popup>{content.applicant}</Popup>
-  </Marker>
-);
-
-const MarkerList = ({ markers }) => {
-  const items = markers.map(({ ...props}, index) => (
-    <PopupMarker key={index} {...props} />
-  ));
-  return <Fragment>{items}</Fragment>
-};
 class MyMap extends Component {
 
   static propTypes = {
@@ -35,10 +23,8 @@ class MyMap extends Component {
   }
 
   state = {
-    updateData: null,
     lat: 37.7749,
     lng: -122.4194,
-    zoom: 13,
   }
 
   render() {
@@ -48,16 +34,14 @@ class MyMap extends Component {
     const southWest = L.latLng(37.713159, -122.527084);
     const northEast = L.latLng(37.814666, -122.365723);
     const bounds = L.latLngBounds(southWest, northEast);
-    if (!data){
-      return null;
-    }
+
     return (
       <Map 
         center={position}
         ref='map' 
         maxBounds={bounds} 
         maxZoom='20'
-        zoom={this.state.zoom} 
+        zoom='13'
         style={{height: '30em', width: '75%'}}
       >
         <TileLayer
