@@ -8,6 +8,8 @@ This app is hosted on Heroku here [Mobile Eats](https://mobile-eats.herokuapp.co
 
 ## Running the tests
 
+```npm test```
+
 ## Built With
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
