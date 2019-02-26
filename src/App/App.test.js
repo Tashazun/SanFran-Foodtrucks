@@ -1,9 +1,13 @@
 import React from "react";
-import { render } from "react-testing-library";
+import { render, cleanup } from "react-testing-library";
 import "jest-dom/extend-expect";
 import App from "./App";
 
 describe("App", () => {
+  afterEach(() => {
+    cleanup();
+  });
+
   it("calls fetch with successful status", () => {
     const mockSuccessResponse = {};
     const mockJsonPromise = Promise.resolve(mockSuccessResponse);
