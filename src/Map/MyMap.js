@@ -23,10 +23,8 @@ class MyMap extends Component {
   }
 
   state = {
-    updateData: null,
     lat: 37.7749,
     lng: -122.4194,
-    zoom: 13,
   }
 
   render() {
@@ -43,7 +41,7 @@ class MyMap extends Component {
         ref='map' 
         maxBounds={bounds} 
         maxZoom='20'
-        zoom={this.state.zoom} 
+        zoom='13'
         style={{height: '30em', width: '75%'}}
       >
         <TileLayer
